@@ -13,7 +13,7 @@ const beerComp = (props) => {
                 <p>Attenuation Level: <span>{props.data.attenuation_level}</span></p>
                 <p>{props.data.description}</p>
                 <p>{props.data.contributed_by}</p>
-                <Link to="/AllBeers"><img src="../img/Back.svg" /></Link>
+                <Link to="/AllBeers"><img src="../img/Back.svg" alt="#" /></Link>
             </figcaption>
         </figure>);
 }
