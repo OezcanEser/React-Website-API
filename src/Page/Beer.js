@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import BeerComp from '../Components/BeerComp';
-
+import NavBar from '../Components/NavComp';
 
 class allBeer extends Component {
     state = {
@@ -9,7 +9,6 @@ class allBeer extends Component {
     }
 
     componentDidMount() {
-        console.log(this.props.match.params)
         let id = this.props.match.params.beerId
         fetch(`https://ih-beers-api2.herokuapp.com/beers/${id}`)
             .then(response => response.json())
@@ -27,6 +26,7 @@ class allBeer extends Component {
                         data={this.state.data} />
                     : "Loading ..."
                 }
+                <NavBar />
             </section>
         );
     }

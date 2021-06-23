@@ -32,7 +32,7 @@ class Home extends Component {
             <figure>
                 <img src="img/randombeer.jpg" alt="#" />
                 <figcaption>
-                    <Link to={`/beer/`}>Random Beer</Link>
+                    <Link to={`/beers/random`}>Random Beer</Link>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit, corporis?</p>
                 </figcaption>
             </figure>

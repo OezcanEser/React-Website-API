@@ -1,15 +1,15 @@
 import React, { Component } from 'react';
-import AllBeersComp from '../Components/AllBeersComp';
+import RandomBeerComp from '../Components/BeerComp';
 import NavBar from '../Components/NavComp';
 
 class allBeer extends Component {
     state = {
-        data: [],
+        data: {},
         isLoaded: false
     }
 
     componentDidMount() {
-        fetch('https://ih-beers-api2.herokuapp.com/beers')
+        fetch(`https://ih-beers-api2.herokuapp.com/beers/random`)
             .then(response => response.json())
             .then(json => {
                 console.log(json)
@@ -21,7 +21,8 @@ class allBeer extends Component {
         return (
             <section>
                 {this.state.isLoaded ?
-                    this.state.data.map((ele, i) => <AllBeersComp key={ele._id} data={ele} />)
+                    <RandomBeerComp
+                        data={this.state.data} />
                     : "Loading ..."
                 }
                 <NavBar />
