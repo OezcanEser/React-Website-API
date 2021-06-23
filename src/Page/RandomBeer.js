@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import RandomBeerComp from '../Components/BeerComp';
+import BeerComp from '../Components/BeerComp';
 import NavBar from '../Components/NavComp';
 
 class allBeer extends Component {
@@ -12,7 +12,6 @@ class allBeer extends Component {
         fetch(`https://ih-beers-api2.herokuapp.com/beers/random`)
             .then(response => response.json())
             .then(json => {
-                console.log(json)
                 this.setState({ data: json, isLoaded: true });
             })
     }
@@ -21,7 +20,7 @@ class allBeer extends Component {
         return (
             <section>
                 {this.state.isLoaded ?
-                    <RandomBeerComp
+                    <BeerComp
                         data={this.state.data} />
                     : "Loading ..."
                 }

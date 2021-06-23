@@ -11,25 +11,23 @@ class Home extends Component {
     }
 
     componentDidMount() {
-        console.log(this.props.match.params)
         fetch(`https://ih-beers-api2.herokuapp.com/beers/random`)
             .then(response => response.json())
             .then(json => {
-                console.log(json)
                 this.setState({ data: json, isLoaded: true });
             })
     }
 
     render() {
         return (<main>
-            <figure>
+            <figure className="homeFigure">
                 <img src="img/allbeers.jpg" alt="#" />
                 <figcaption>
                     <Link to="/AllBeers">All Beers</Link>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit, corporis?</p>
                 </figcaption>
             </figure>
-            <figure>
+            <figure className="homeFigure">
                 <img src="img/randombeer.jpg" alt="#" />
                 <figcaption>
                     <Link to={`/beers/random`}>Random Beer</Link>

@@ -13,7 +13,6 @@ class allBeer extends Component {
         fetch(`https://ih-beers-api2.herokuapp.com/beers/${id}`)
             .then(response => response.json())
             .then(json => {
-                console.log(json)
                 this.setState({ data: json, isLoaded: true });
             })
     }

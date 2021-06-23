@@ -6,7 +6,7 @@ const NavBar = () => {
     return (<footer>
         <nav>
             <ul>
-                <Link to="/">Home</Link>
+                <Link to="/"><img src="../img/Logo.jpg" alt="" /></Link>
             </ul>
         </nav>
     </footer>);
